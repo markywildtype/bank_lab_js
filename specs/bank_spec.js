@@ -54,7 +54,7 @@ describe('Bank', function() {
     assert.strictEqual(bank.totalValue(), 155);
   });
 
-  xit("should be able to find the average value of accounts", function() {
+  it("should be able to find the average value of accounts", function() {
     assert.strictEqual(bank.averageValue(), 38.75);
   });
 

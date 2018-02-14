@@ -22,7 +22,8 @@ Bank.prototype.largestAccount = function(){
 
 Bank.prototype.payInterest = function(){
   const result = this.accounts.map(function(account){
-    return account.value * 1.10;
+    account.value *= 1.10;
+    return account;
   });
   this.accounts = result;
 }
@@ -39,6 +40,11 @@ Bank.prototype.totalValue = function(){
     return runningTotal + account.value;
   }, 0);
   return total;
+}
+
+Bank.prototype.averageValue = function(){
+  const total = this.totalValue();
+  return total / this.accounts.length;
 }
 
 module.exports = Bank;
